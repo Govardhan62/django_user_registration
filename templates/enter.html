@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 150px auto;
+          }
+          
+          input[type="text"],
+          input[type="email"],
+          input[type="password"],
+          input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+          }
+          
+          input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+          }
+          
+          input[type="submit"]:hover {
+            background-color: #45a049;
+          }
+    </style>
+</head>
+<body>
+    <form action ="enter" method="post">
+        {% csrf_token %}
+
+        <input type="text" name ="first_name" placeholder="First Name"><br>
+        <input type="text" name ="last_name" placeholder="Last Name"><br>
+        <input type="text" name ="username" placeholder="UserName"><br>
+        <input type="email" name ="email" placeholder="Email"><br>
+        <input type="password" name ="password1" placeholder="Password"><br>
+        <input type="password" name ="password2" placeholder="Confirm Password"><br>
+        <input type="submit" value="Register">
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

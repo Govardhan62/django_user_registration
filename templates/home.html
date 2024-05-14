@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/Register Navbar</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url("media/images/beach.webp");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .navbar a {
+      margin: 0 5px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <form>
+    <div class="navbar">
+      <a href="{% url 'inside' %}">Login</a>
+      <a href="{% url 'enter' %}">Register</a>
+    </div>
+    <!-- Other form elements can go here -->
+  </form>
+</div>
+</body>
+</html>
